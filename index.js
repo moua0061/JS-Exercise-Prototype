@@ -45,20 +45,23 @@ function Person(name, age) {
   this.stomach = [];
 }
 
-Person.prototype.eatSomeFood = function (){
-  this.eatingEdible.push([this.stomach])
+Person.prototype.eat = function (someFood){
+  if (this.stomach.length < 10 ){
+    this.stomach.push(someFood);
+  }
 }
 
 Person.prototype.poop = function (){
-  this.pooping = this.stomach;
+  this.stomach = [];
 }
 
 Person.prototype.toString = function (){
-  return `${this.name} and ${this.age}.`;
+  return `${this.name}, ${this.age}.`;
 }
 
 console.log('Neo', 20);
 console.log('Neo'.stomach);
+
 
 
 /*
