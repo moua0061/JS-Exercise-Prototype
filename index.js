@@ -59,10 +59,29 @@ Person.prototype.toString = function (){
   return `${this.name}, ${this.age}.`;
 }
 
-console.log('Neo', 20);
-console.log('Neo'.stomach);
-
-
+// let neo2 = new Person('Neo', 20);
+// console.log(neo2);
+// neo2.eat(5);
+// console.log(neo2);
+// neo2.eat(6);
+// console.log(neo2);
+// neo2.poop();
+// console.log(neo2);
+// neo2.eat(7);
+// neo2.eat(8);
+// neo2.eat(9);
+// neo2.eat(10);
+// neo2.eat(11);
+// neo2.eat(12);
+// neo2.eat(13);
+// neo2.eat(53);
+// neo2.eat(52);
+// neo2.eat(51);
+// neo2.eat(59);
+// console.log(neo2);
+// neo2.poop();
+// console.log(neo2);
+// console.log(neo2.toString());
 
 /*
   TASK 2
@@ -89,6 +108,20 @@ Car.prototype.fill = function (gallons){
   this.tank = gallons + this.tank 
 }
 
+let batmobile = new Car('BatMobile', 20);
+console.log(batmobile);
+let corolla = new Car('Toyota', 25);
+// console.log(corolla);
+// corolla.odometer = 1986;
+// console.log(corolla);
+// corolla.engine = 'V6';
+// console.log(corolla);
+// console.log(corolla.engine);
+batmobile.fill(55);
+console.log(batmobile);
+batmobile.fill(19);
+console.log(batmobile);
+
 
 /*
   TASK 3
@@ -104,18 +137,22 @@ function Baby(name, age, favoriteToy) {
 
 Baby.prototype = Object.create(Person.prototype);
 
-Baby.prototype.play = function(favoriteToy){
+Baby.prototype.play = function(){
   return `Playing with ${this.favoriteToy}`;
 }
 
+let baby = new Baby ('redd', '2 months', 'wonder woman');
+console.log(baby);
+console.log(baby.play()); // if i want it to pass, i have to remove 'this' in the string ${}
 
 /* 
   TASK 4
   In your own words explain the four principles for the "this" keyword below:
-  1. 
-  2. 
-  3. 
-  4. 
+  1. window/global bind: it will show everything in your browser window in the global scope
+  2. implict binding: that thing immediate to the left (baby.play) of the dot gets 'this'
+  3. new binding: the keyword 'this' refers to the specific instance of the object that is created and returned by the
+  constructor function whenever we use a constructor function.
+  4. explicit binding: keyworkd 'this' is defiend when using .call, .apply or .bind 
 */
 
 
